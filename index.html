@@ -127,6 +127,9 @@
             border-radius: 12px;
             padding: 2.5rem 2rem;
             transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .service-card:hover {
             transform: translateY(-5px);
@@ -144,6 +147,26 @@
         .service-card p {
             color: var(--text-muted);
             font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        .btn-card-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: rgba(0,255,136,0.1);
+            color: var(--accent-color);
+            border: 1px solid rgba(0,255,136,0.3);
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .btn-card-whatsapp:hover {
+            background: var(--accent-color);
+            color: #000;
         }
         .reviews-section {
             padding: 60px 5%;
@@ -263,24 +286,39 @@
         </a>
     </section>
 
-    <!-- Seção de Serviços -->
+    <!-- Seção de Serviços com Orçamento Direto -->
     <section id="services" class="services">
         <h2 class="section-title">Nossos Serviços Especializados</h2>
         <div class="services-grid">
             <div class="service-card">
-                <i class="fas fa-broom"></i>
-                <h3>Limpeza Preventiva</h3>
-                <p>Remoção completa de poeira, troca de pasta térmica de alta performance e organização interna para evitar superaquecimento e travamentos.</p>
+                <div>
+                    <i class="fas fa-broom"></i>
+                    <h3>Limpeza Preventiva</h3>
+                    <p>Remoção completa de poeira, troca de pasta térmica de alta performance e organização interna para evitar superaquecimento e travamentos.</p>
+                </div>
+                <a href="https://wa.me/5519992277087?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20Limpeza%20Preventiva." class="btn-card-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Orçar Limpeza
+                </a>
             </div>
             <div class="service-card">
-                <i class="fas fa-tools"></i>
-                <h3>Manutenção e Reparos</h3>
-                <p>Diagnóstico preciso, substituição de peças com defeito, recuperação de sistemas operacionais e solução de falhas de hardware e software.</p>
+                <div>
+                    <i class="fas fa-tools"></i>
+                    <h3>Manutenção e Reparos</h3>
+                    <p>Diagnóstico preciso, substituição de peças com defeito, recuperação de sistemas operacionais e solução de falhas de hardware e software.</p>
+                </div>
+                <a href="https://wa.me/5519992277087?text=Olá!%20Preciso%20de%20ajuda%20com%20Manutenção%20e%20Reparos%20no%20meu%20computador." class="btn-card-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Solicitar Reparo
+                </a>
             </div>
             <div class="service-card">
-                <i class="fas fa-tachometer-alt"></i>
-                <h3>Otimização de Desempenho</h3>
-                <p>Aceleração de inicialização, remoção de vírus e otimização focada em máxima fluidez para jogos competitivos, estudos e produtividade no trabalho.</p>
+                <div>
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Otimização de Desempenho</h3>
+                    <p>Aceleração de inicialização, remoção de vírus e otimização focada em máxima fluidez para jogos competitivos, estudos e produtividade no trabalho.</p>
+                </div>
+                <a href="https://wa.me/5519992277087?text=Olá!%20Gostaria%20de%20otimizar%20o%20desempenho%20do%20meu%20PC/Notebook." class="btn-card-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Quero Otimizar
+                </a>
             </div>
         </div>
     </section>
