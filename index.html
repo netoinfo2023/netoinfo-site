@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetoInfo - Manutenção e Otimização de PCs e Notebooks em Campinas</title>
+    <meta name="description" content="Especialista em limpeza, manutenção e otimização de PCs e notebooks para trabalho, jogos e estudo em Campinas e região. Atendimento profissional e rápido.">
+    <!-- Fontes e Ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400,600,700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #131c2e;
+            --accent-color: #00ff88;
+            --accent-hover: #00cc6a;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        header {
+            background: rgba(11, 15, 25, 0.95);
+            border-bottom: 1px solid #1f293d;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 5%;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .logo-badge {
+            background: linear-gradient(135deg, #00ff88, #00b4d8);
+            color: #0b0f19;
+            font-weight: 900;
+            font-size: 0.9rem;
+            padding: 6px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+        }
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--text-main);
+            letter-spacing: 1px;
+        }
+        .logo-text span {
+            color: var(--accent-color);
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        .hero {
+            padding: 140px 5% 80px 5%;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0,255,136,0.05) 0%, rgba(11,15,25,0) 100%);
+        }
+        .badge-region {
+            display: inline-block;
+            background: rgba(0,255,136,0.1);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0,255,136,0.3);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 20px rgba(0,255,136,0.3);
+        }
+        .btn-whatsapp:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+        .services {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            font-weight: 800;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background-color: var(--card-bg);
+            border: 1px solid #1f293d;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1.2rem;
+        }
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        .btn-card-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: rgba(0,255,136,0.1);
+            color: var(--accent-color);
+            border: 1px solid rgba(0,255,136,0.3);
+            padding: 0.7rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        .btn-card-action:hover {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+        .location-section {
+            padding: 60px 5%;
+            background: var(--card-bg);
+            text-align: center;
+            border-top: 1px solid #1f293d;
+            border-bottom: 1px solid #1f293d;
+        }
+        .location-box {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .location-box p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        .btn-map {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-map:hover {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+        .social-section {
+            text-align: center;
+            padding: 60px 5%;
+            background: #0e1626;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--card-bg);
+            color: var(--text-main);
+            border-radius: 50%;
+            font-size: 1.3rem;
+            border: 1px solid #1f293d;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            background: var(--accent-color);
+            color: #000;
+            border-color: var(--accent-color);
+        }
+        footer {
+            text-align: center;
+            padding: 40px 5%;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background-color: var(--bg-color);
+            border-top: 1px solid #1f293d;
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.1rem; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho com Logo Estilizada -->
+    <header>
+        <a href="#" class="logo-container">
+            <div class="logo-badge">NI</div>
+            <div class="logo-text">NETO<span>INFO</span></div>
+        </a>
+        <nav>
+            <a href="#services">Serviços</a>
+            <a href="#location">Localização</a>
+            <a href="#social">Redes Sociais</a>
+            <a href="https://wa.me/c/5519992277087" target="_blank">Catálogo</a>
+        </nav>
+        <a href="https://wa.me/5519992277087?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." class="btn-whatsapp" style="padding: 0.5rem 1rem; font-size: 0.9rem;" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+    </header>
+
+    <!-- Seção Principal (Hero) -->
+    <section class="hero">
+        <div class="badge-region"><i class="fas fa-map-marker-alt"></i> Atendimento Especializado em Campinas e Região</div>
+        <h1>Máxima Performance para seu <span>PC e Notebook</span></h1>
+        <p>Soluções completas em limpeza preventiva, manutenção avançada e otimização de desempenho para trabalho, estudos e jogos. Garantia de rapidez e confiança.</p>
+        <a href="https://wa.me/5519992277087?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20geral%20para%20meu%20computador." class="btn-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i> Falar no WhatsApp Agora
+        </a>
+    </section>
+
+    <!-- Seção de Serviços Interativos -->
+    <section id="services" class="services">
+        <h2 class="section-title">Nossos Serviços Especializados</h2>
+        <div class="services-grid">
+            <!-- Card 1 -->
+            <div class="service-card">
+                <div>
+                    <i class="fas fa-broom"></i>
+                    <h3>Limpeza Preventiva</h3>
+                    <p>Remoção completa de poeira, troca de pasta térmica de alta performance e organização interna para evitar superaquecimento e travamentos.</p>
+                </div>
+                <a href="https://wa.me/5519992277087?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20Limpeza%20Preventiva." class="btn-card-action" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Orçar Limpeza
+                </a>
+            </div>
+            <!-- Card 2 -->
+            <div class="service-card">
+                <div>
+                    <i class="fas fa-tools"></i>
+                    <h3>Manutenção e Reparos</h3>
+                    <p>Diagnóstico preciso, substituição de peças com defeito, recuperação de sistemas operacionais e solução de falhas de hardware e software.</p>
+                </div>
+                <a href="https://wa.me/5519992277087?text=Olá!%20Preciso%20de%20ajuda%20com%20Manutenção%20e%20Reparos%20no%20meu%20computador." class="btn-card-action" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Solicitar Reparo
+                </a>
+            </div>
+            <!-- Card 3 -->
+            <div class="service-card">
+                <div>
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Otimização de Desempenho</h3>
+                    <p>Aceleração de inicialização, remoção de vírus e otimização focada em máxima fluidez para jogos competitivos, estudos e produtividade no trabalho.</p>
+                </div>
+                <a href="https://wa.me/5519992277087?text=Olá!%20Gostaria%20de%20otimizar%20o%20desempenho%20do%20meu%20PC/Notebook." class="btn-card-action" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Quero Otimizar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Localização (Google Maps Oficial) -->
+    <section id="location" class="location-section">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Onde Estamos</h2>
+        <div class="location-box">
+            <p><i class="fas fa-map-marker-alt" style="color: var(--accent-color);"></i> Rua Rafael Paulo Teixeira de Oliveira, 224 - Loteamento Vila Lafayette Alvaro, Campinas - SP</p>
+            <a href="https://maps.app.goo.gl/vgFWG73dz3MTeLDA9" target="_blank" class="btn-map">
+                <i class="fas fa-directions"></i> Ver Perfil e Traçar Rota no Google Maps
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção de Redes Sociais Completas -->
+    <section id="social" class="social-section">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Acompanhe nosso Trabalho</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Fique por dentro das novidades, veja dicas de informática e confira nossas avaliações e produtos disponíveis.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/netoinfo2022" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@netoinfo" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100056961129868" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/c/5519992277087" target="_blank" title="Catálogo WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p><strong>NetoInfo</strong> — Comércio Varejista Especializado de Equipamentos e Suprimentos de Informática</p>
+        <p>CNPJ: 51.964.945/0001-64 | Campinas - SP</p>
+        <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #6b7280;">© 2026 NetoInfo. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
