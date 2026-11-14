@@ -22,12 +22,12 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
         }
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
         header {
             background: rgba(11, 15, 25, 0.95);
@@ -39,35 +39,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.8rem 5%;
+            padding: 1rem 5%;
         }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-        .logo-badge {
-            background: linear-gradient(135deg, #00ff88, #00b4d8);
-            color: #0b0f19;
+        .logo {
+            font-size: 1.5rem;
             font-weight: 900;
-            font-size: 0.9rem;
-            padding: 6px 10px;
-            border-radius: 6px;
-            letter-spacing: 0.5px;
-        }
-        .logo-text {
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: var(--text-main);
-            letter-spacing: 1px;
-        }
-        .logo-text span {
             color: var(--accent-color);
-        }
-        nav {
-            display: flex;
-            align-items: center;
+            letter-spacing: 1px;
         }
         nav a {
             color: var(--text-main);
@@ -149,9 +127,6 @@
             border-radius: 12px;
             padding: 2.5rem 2rem;
             transition: transform 0.3s, border-color 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
         .service-card:hover {
             transform: translateY(-5px);
@@ -169,64 +144,57 @@
         .service-card p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 1.5rem;
         }
-        .btn-card-action {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: rgba(0,255,136,0.1);
-            color: var(--accent-color);
-            border: 1px solid rgba(0,255,136,0.3);
-            padding: 0.7rem 1rem;
-            border-radius: 6px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-        }
-        .btn-card-action:hover {
-            background-color: var(--accent-color);
-            color: #000;
+        .reviews-section {
+            padding: 60px 5%;
+            background-color: #0d1322;
+            text-align: center;
         }
         .location-section {
             padding: 60px 5%;
-            background: var(--card-bg);
+            background-color: var(--bg-color);
             text-align: center;
-            border-top: 1px solid #1f293d;
-            border-bottom: 1px solid #1f293d;
         }
         .location-box {
+            background-color: var(--card-bg);
+            border: 1px solid #1f293d;
+            border-radius: 12px;
+            padding: 2rem;
             max-width: 700px;
             margin: 0 auto;
+        }
+        .location-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
         }
         .location-box p {
             color: var(--text-muted);
             margin-bottom: 1.5rem;
-            font-size: 1.05rem;
         }
         .btn-map {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background-color: transparent;
+            gap: 8px;
+            background: transparent;
             color: var(--accent-color);
             border: 2px solid var(--accent-color);
-            padding: 0.8rem 1.8rem;
-            border-radius: 8px;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s;
         }
         .btn-map:hover {
-            background-color: var(--accent-color);
+            background: var(--accent-color);
             color: #000;
         }
         .social-section {
             text-align: center;
             padding: 60px 5%;
             background: #0e1626;
+            border-top: 1px solid #1f293d;
+            border-bottom: 1px solid #1f293d;
         }
         .social-icons {
             display: flex;
@@ -258,8 +226,6 @@
             padding: 40px 5%;
             color: var(--text-muted);
             font-size: 0.9rem;
-            background-color: var(--bg-color);
-            border-top: 1px solid #1f293d;
         }
         footer p {
             margin-bottom: 0.5rem;
@@ -272,14 +238,12 @@
 </head>
 <body>
 
-    <!-- Cabeçalho com Logo Estilizada -->
+    <!-- Cabeçalho -->
     <header>
-        <a href="#" class="logo-container">
-            <div class="logo-badge">NI</div>
-            <div class="logo-text">NETO<span>INFO</span></div>
-        </a>
+        <div class="logo">NETOINFO</div>
         <nav>
             <a href="#services">Serviços</a>
+            <a href="#reviews">Avaliações</a>
             <a href="#location">Localização</a>
             <a href="#social">Redes Sociais</a>
             <a href="https://wa.me/c/5519992277087" target="_blank">Catálogo</a>
@@ -294,78 +258,68 @@
         <div class="badge-region"><i class="fas fa-map-marker-alt"></i> Atendimento Especializado em Campinas e Região</div>
         <h1>Máxima Performance para seu <span>PC e Notebook</span></h1>
         <p>Soluções completas em limpeza preventiva, manutenção avançada e otimização de desempenho para trabalho, estudos e jogos. Garantia de rapidez e confiança.</p>
-        <a href="https://wa.me/5519992277087?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20geral%20para%20meu%20computador." class="btn-whatsapp" target="_blank">
+        <a href="https://wa.me/5519992277087?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20computador." class="btn-whatsapp" target="_blank">
             <i class="fab fa-whatsapp"></i> Falar no WhatsApp Agora
         </a>
     </section>
 
-    <!-- Seção de Serviços Interativos -->
+    <!-- Seção de Serviços -->
     <section id="services" class="services">
         <h2 class="section-title">Nossos Serviços Especializados</h2>
         <div class="services-grid">
-            <!-- Card 1 -->
             <div class="service-card">
-                <div>
-                    <i class="fas fa-broom"></i>
-                    <h3>Limpeza Preventiva</h3>
-                    <p>Remoção completa de poeira, troca de pasta térmica de alta performance e organização interna para evitar superaquecimento e travamentos.</p>
-                </div>
-                <a href="https://wa.me/5519992277087?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20Limpeza%20Preventiva." class="btn-card-action" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Orçar Limpeza
-                </a>
+                <i class="fas fa-broom"></i>
+                <h3>Limpeza Preventiva</h3>
+                <p>Remoção completa de poeira, troca de pasta térmica de alta performance e organização interna para evitar superaquecimento e travamentos.</p>
             </div>
-            <!-- Card 2 -->
             <div class="service-card">
-                <div>
-                    <i class="fas fa-tools"></i>
-                    <h3>Manutenção e Reparos</h3>
-                    <p>Diagnóstico preciso, substituição de peças com defeito, recuperação de sistemas operacionais e solução de falhas de hardware e software.</p>
-                </div>
-                <a href="https://wa.me/5519992277087?text=Olá!%20Preciso%20de%20ajuda%20com%20Manutenção%20e%20Reparos%20no%20meu%20computador." class="btn-card-action" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Solicitar Reparo
-                </a>
+                <i class="fas fa-tools"></i>
+                <h3>Manutenção e Reparos</h3>
+                <p>Diagnóstico preciso, substituição de peças com defeito, recuperação de sistemas operacionais e solução de falhas de hardware e software.</p>
             </div>
-            <!-- Card 3 -->
             <div class="service-card">
-                <div>
-                    <i class="fas fa-tachometer-alt"></i>
-                    <h3>Otimização de Desempenho</h3>
-                    <p>Aceleração de inicialização, remoção de vírus e otimização focada em máxima fluidez para jogos competitivos, estudos e produtividade no trabalho.</p>
-                </div>
-                <a href="https://wa.me/5519992277087?text=Olá!%20Gostaria%20de%20otimizar%20o%20desempenho%20do%20meu%20PC/Notebook." class="btn-card-action" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Quero Otimizar
-                </a>
+                <i class="fas fa-tachometer-alt"></i>
+                <h3>Otimização de Desempenho</h3>
+                <p>Aceleração de inicialização, remoção de vírus e otimização focada em máxima fluidez para jogos competitivos, estudos e produtividade no trabalho.</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Localização (Google Maps Oficial) -->
+    <!-- Seção de Avaliações do Google (Elfsight) -->
+    <section id="reviews" class="reviews-section">
+        <h2 class="section-title" style="margin-bottom: 2rem;">O que nossos Clientes dizem</h2>
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-accc80cc-6020-460e-844e-48219c99ec0d" data-elfsight-app-lazy></div>
+    </section>
+
+    <!-- Seção de Localização -->
     <section id="location" class="location-section">
-        <h2 class="section-title" style="margin-bottom: 1rem;">Onde Estamos</h2>
+        <h2 class="section-title">Onde Estamos</h2>
         <div class="location-box">
+            <h3>NetoInfo - Campinas / SP</h3>
             <p><i class="fas fa-map-marker-alt" style="color: var(--accent-color);"></i> Rua Rafael Paulo Teixeira de Oliveira, 224 - Loteamento Vila Lafayette Alvaro, Campinas - SP</p>
             <a href="https://maps.app.goo.gl/vgFWG73dz3MTeLDA9" target="_blank" class="btn-map">
-                <i class="fas fa-directions"></i> Ver Perfil e Traçar Rota no Google Maps
+                <i class="fas fa-directions"></i> Abrir no Google Maps / Traçar Rota
             </a>
         </div>
     </section>
 
-    <!-- Seção de Redes Sociais Completas -->
+    <!-- Seção de Redes Sociais e Marketplace -->
     <section id="social" class="social-section">
         <h2 class="section-title" style="margin-bottom: 1rem;">Acompanhe nosso Trabalho</h2>
-        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Fique por dentro das novidades, veja dicas de informática e confira nossas avaliações e produtos disponíveis.</p>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Fique por dentro das novidades, veja dicas de informática e confira nossas redes e produtos disponíveis.</p>
         <div class="social-icons">
             <a href="https://www.instagram.com/netoinfo2022" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@netoinfo" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100056961129868" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.facebook.com/marketplace/profile/100056961129868/" target="_blank" title="Facebook Marketplace"><i class="fab fa-facebook"></i></a>
             <a href="https://wa.me/c/5519992277087" target="_blank" title="Catálogo WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
     </section>
 
     <!-- Rodapé -->
     <footer>
-        <p><strong>NetoInfo</strong> — Comércio Varejista Especializado de Equipamentos e Suprimentos de Informática</p>
-        <p>CNPJ: 51.964.945/0001-64 | Campinas - SP</p>
+        <p><strong>NetoInfo</strong> — Comércio Varejista Especializado de Equipamentos e Suprimentos de Informática[cite: 3]</p>
+        <p>CNPJ: 51.964.945/0001-64 | Campinas - SP[cite: 3]</p>
         <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #6b7280;">© 2026 NetoInfo. Todos os direitos reservados.</p>
     </footer>
 
