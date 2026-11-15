@@ -360,6 +360,21 @@
         <p>CNPJ: 51.964.945/0001-64 | Campinas - SP</p>
         <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #6b7280;">© 2026 NetoInfo. Todos os direitos reservados.</p>
     </footer>
+    <!-- Script de Limpeza do Rodapé do Widget Elfsight -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const removeWatermark = setInterval(() => {
+                const links = document.querySelectorAll('.elfsight-app-accc80cc-6020-460e-844e-48219c99ec0d a');
+                links.forEach(el => {
+                    if (el.innerText.includes('Free Google Reviews Widget') || el.href.includes('elfsight')) {
+                        let parent = el.closest('div') || el.parentElement;
+                        if (parent) parent.style.display = 'none';
+                        el.style.display = 'none';
+                    }
+                });
+            }, 500);
+        });
+    </script>
 
 </body>
 </html>
