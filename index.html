@@ -6,7 +6,7 @@
     <title>NetoInfo - Manutenção e Otimização de PCs e Notebooks em Campinas</title>
     <meta name="description" content="Especialista em limpeza, manutenção e otimização de PCs e notebooks para trabalho, jogos e estudo em Campinas e região. Atendimento profissional e rápido.">
     <!-- Fontes e Ícones -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400,600,700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -14,6 +14,7 @@
             --card-bg: #131c2e;
             --accent-color: #00ff88;
             --accent-hover: #00cc6a;
+            --olx-color: #6e0ad6;
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
         }
@@ -22,12 +23,12 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            scroll-behavior: smooth;
         }
         header {
             background: rgba(11, 15, 25, 0.95);
@@ -46,12 +47,18 @@
             font-weight: 900;
             color: var(--accent-color);
             letter-spacing: 1px;
+            text-decoration: none;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
         }
         nav a {
             color: var(--text-main);
             text-decoration: none;
-            margin-left: 1.5rem;
             font-weight: 600;
+            font-size: 0.95rem;
             transition: color 0.3s;
         }
         nav a:hover {
@@ -168,32 +175,129 @@
             background: var(--accent-color);
             color: #000;
         }
+        
+        /* Seção de Catálogo e Lojas Online */
+        .catalog-section {
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .catalog-box {
+            background: linear-gradient(145deg, #131c2e 0%, #0f172a 100%);
+            border: 1px solid #1f293d;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .catalog-box h2 {
+            font-size: 1.9rem;
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+        }
+        .catalog-box p {
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 2rem;
+        }
+        .marketplace-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-market {
+            padding: 0.9rem 1.6rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: transform 0.2s, opacity 0.3s;
+            color: #fff;
+            font-size: 0.95rem;
+        }
+        .btn-market:hover {
+            transform: translateY(-3px);
+            opacity: 0.95;
+        }
+        .btn-wa-cat {
+            background-color: #25d366;
+            color: #0b0f19;
+        }
+        .btn-olx-market {
+            background-color: var(--olx-color);
+        }
+        .btn-fb-market {
+            background-color: #1877f2;
+        }
+
         .reviews-section {
             padding: 60px 5%;
             background-color: #0d1322;
             text-align: center;
         }
+        
+        /* Seção de Localização com Mapa Visual Real e Clicável */
         .location-section {
             padding: 60px 5%;
             background-color: var(--bg-color);
             text-align: center;
         }
-        .location-box {
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
             background-color: var(--card-bg);
             border: 1px solid #1f293d;
             border-radius: 12px;
-            padding: 2rem;
-            max-width: 700px;
+            padding: 2.5rem;
+            max-width: 1100px;
             margin: 0 auto;
+            align-items: center;
+            text-align: left;
         }
-        .location-box h3 {
-            font-size: 1.4rem;
+        .location-info h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--accent-color);
         }
-        .location-box p {
+        .location-info p {
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .location-info i {
+            color: var(--accent-color);
+        }
+        .map-frame {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+        .map-click-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.3s;
+        }
+        .map-click-overlay:hover {
+            background: rgba(0, 255, 136, 0.08);
         }
         .btn-map {
             display: inline-flex;
@@ -207,6 +311,7 @@
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s;
+            margin-top: 1rem;
         }
         .btn-map:hover {
             background: var(--accent-color);
@@ -224,6 +329,7 @@
             justify-content: center;
             gap: 1.5rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
         .social-icons a {
             display: flex;
@@ -256,20 +362,21 @@
         @media(max-width: 768px) {
             .hero h1 { font-size: 2.1rem; }
             nav { display: none; }
+            .location-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho com link de Catálogo -->
     <header>
-        <div class="logo">NETOINFO</div>
+        <a href="#" class="logo">NETOINFO</a>
         <nav>
             <a href="#services">Serviços</a>
+            <a href="#catalog">Catálogo</a>
             <a href="#reviews">Avaliações</a>
             <a href="#location">Localização</a>
             <a href="#social">Redes Sociais</a>
-            <a href="https://wa.me/c/5519992277087" target="_blank">Catálogo</a>
         </nav>
         <a href="https://wa.me/5519992277087?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." class="btn-whatsapp" style="padding: 0.5rem 1rem; font-size: 0.9rem;" target="_blank">
             <i class="fab fa-whatsapp"></i> WhatsApp
@@ -323,33 +430,65 @@
         </div>
     </section>
 
+    <!-- Bloco de Catálogo Oficial e Lojas Online -->
+    <section id="catalog" class="catalog-section">
+        <div class="catalog-box">
+            <h2>Catálogo Oficial e Lojas Online</h2>
+            <p>Confira nossos computadores, notebooks, peças, periféricos e serviços disponíveis com pronta entrega e garantia em Campinas e Região.</p>
+            <div class="marketplace-links">
+                <a href="https://wa.me/c/5519992277087" target="_blank" rel="noopener noreferrer" class="btn-market btn-wa-cat">
+                    <i class="fab fa-whatsapp"></i> Catálogo WhatsApp
+                </a>
+                <a href="https://www.olx.com.br/perfil/vieira-f3d9e804" target="_blank" rel="noopener noreferrer" class="btn-market btn-olx-market">
+                    <i class="fas fa-tag"></i> Perfil Oficial na OLX
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100056961129868" target="_blank" rel="noopener noreferrer" class="btn-market btn-fb-market">
+                    <i class="fab fa-facebook"></i> Facebook Marketplace
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção de Avaliações do Google (Elfsight) -->
-   <section id="reviews" class="reviews-section">
+    <section id="reviews" class="reviews-section">
         <h2 class="section-title" style="margin-bottom: 2rem;">O que nossos Clientes dizem</h2>
         <script src="https://elfsightcdn.com/platform.js" async></script>
         <div class="elfsight-app-accc80cc-6020-460e-844e-48219c99ec0d" data-elfsight-app-lazy></div>
     </section>
 
-    <!-- Seção de Localização -->
+    <!-- Seção de Localização com Mapa Visual Real e Clicável -->
     <section id="location" class="location-section">
         <h2 class="section-title">Onde Estamos</h2>
-        <div class="location-box">
-            <h3>NetoInfo - Campinas / SP</h3>
-            <p><i class="fas fa-map-marker-alt" style="color: var(--accent-color);"></i> Rua Rafael Paulo Teixeira de Oliveira, 224 - Loteamento Vila Lafayette Alvaro, Campinas - SP</p>
-            <a href="https://maps.app.goo.gl/vgFWG73dz3MTeLDA9" target="_blank" class="btn-map">
-                <i class="fas fa-directions"></i> Abrir no Google Maps / Traçar Rota
-            </a>
+        <div class="location-container">
+            <div class="location-info">
+                <h3>NetoInfo - Campinas / SP</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Rua Rafael Paulo Teixeira de Oliveira, 224 - Loteamento Vila Lafayette Alvaro, Campinas - SP</p>
+                <p><i class="fas fa-building-shield"></i> CNPJ: 51.964.945/0001-64</p>
+                <p><i class="fas fa-clock"></i> Atendimento com horário agendado</p>
+                <a href="https://maps.app.goo.gl/vgFWG73dz3MTeLDA9" target="_blank" class="btn-map">
+                    <i class="fas fa-directions"></i> Abrir Rota no Google Maps Oficial
+                </a>
+            </div>
+            <div class="map-frame">
+                <a href="https://maps.app.goo.gl/vgFWG73dz3MTeLDA9" target="_blank" class="map-click-overlay" title="Clique para abrir a rota da NetoInfo no Google Maps"></a>
+                <iframe 
+                    src="https://maps.google.com/maps?q=Rua%20Rafael%20Paulo%20Teixeira%20de%20Oliveira,%20224,%20Campinas%20-%20SP&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
         </div>
     </section>
 
-    <!-- Seção de Redes Sociais e Marketplace -->
+    <!-- Seção de Redes Sociais Completa no Rodapé -->
     <section id="social" class="social-section">
         <h2 class="section-title" style="margin-bottom: 1rem;">Acompanhe nosso Trabalho</h2>
-        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Fique por dentro das novidades, veja dicas de informática e confira nossas redes e produtos disponíveis.</p>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Fique por dentro das novidades, veja dicas de informática e acompanhe nossos perfis e canais oficiais.</p>
         <div class="social-icons">
             <a href="https://www.instagram.com/netoinfo2022" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@netoinfo" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.facebook.com/marketplace/profile/100056961129868/" target="_blank" title="Facebook Marketplace"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100056961129868" target="_blank" title="Facebook Oficial"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.olx.com.br/perfil/vieira-f3d9e804" target="_blank" title="Perfil OLX"><i class="fas fa-tag"></i></a>
             <a href="https://wa.me/c/5519992277087" target="_blank" title="Catálogo WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
     </section>
@@ -360,21 +499,6 @@
         <p>CNPJ: 51.964.945/0001-64 | Campinas - SP</p>
         <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #6b7280;">© 2026 NetoInfo. Todos os direitos reservados.</p>
     </footer>
-    <!-- Script de Limpeza do Rodapé do Widget Elfsight -->
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const removeWatermark = setInterval(() => {
-                const links = document.querySelectorAll('.elfsight-app-accc80cc-6020-460e-844e-48219c99ec0d a');
-                links.forEach(el => {
-                    if (el.innerText.includes('Free Google Reviews Widget') || el.href.includes('elfsight')) {
-                        let parent = el.closest('div') || el.parentElement;
-                        if (parent) parent.style.display = 'none';
-                        el.style.display = 'none';
-                    }
-                });
-            }, 500);
-        });
-    </script>
 
 </body>
 </html>
