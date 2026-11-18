@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NetoInfo - Manutenção e Otimização de PCs e Notebooks em Campinas</title>
-    <meta name="description" content="Especialista em limpeza, manutenção e otimização de PCs e notebooks para trabalho, jogos e estudo em Campinas e região. Atendimento profissional e rápido.">
+    <title>NetoInfo - Manutenção, Venda e Compra de PCs e Peças em Campinas</title>
+    <meta name="description" content="Especialista em limpeza, manutenção, otimização e compra/avaliação de PCs e peças de hardware usadas em Campinas e região. Pagamento imediato via Pix.">
     <!-- Fontes e Ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,6 +15,7 @@
             --accent-color: #00ff88;
             --accent-hover: #00cc6a;
             --olx-color: #6e0ad6;
+            --sell-color: #ff9900;
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
         }
@@ -94,6 +95,12 @@
             max-width: 700px;
             margin: 0 auto 2rem auto;
         }
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
         .btn-whatsapp {
             display: inline-flex;
             align-items: center;
@@ -111,6 +118,17 @@
         .btn-whatsapp:hover {
             background-color: var(--accent-hover);
             transform: translateY(-2px);
+        }
+        .btn-sell-nav {
+            background-color: rgba(255, 153, 0, 0.1);
+            color: var(--sell-color) !important;
+            border: 1px solid rgba(255, 153, 0, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+        .btn-sell-nav:hover {
+            background-color: var(--sell-color);
+            color: #000 !important;
         }
         .services {
             padding: 80px 5%;
@@ -175,10 +193,163 @@
             background: var(--accent-color);
             color: #000;
         }
-        
+
+        /* NOVA SEÇÃO: Compra e Avaliação de Hardware Usado */
+        .sell-section {
+            padding: 80px 5%;
+            background: linear-gradient(180deg, #0b0f19 0%, #111a2e 100%);
+            border-top: 1px solid #1f293d;
+            border-bottom: 1px solid #1f293d;
+        }
+        .sell-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 153, 0, 0.3);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        .sell-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .sell-badge {
+            display: inline-block;
+            background: rgba(255, 153, 0, 0.15);
+            color: var(--sell-color);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 153, 0, 0.4);
+        }
+        .sell-header h2 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 0.8rem;
+            color: #fff;
+        }
+        .sell-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .sell-content-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+            margin-bottom: 2.5rem;
+        }
+        .sell-items-box h3, .sell-steps-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sell-items-box h3 i {
+            color: var(--sell-color);
+        }
+        .sell-steps-box h3 i {
+            color: var(--accent-color);
+        }
+        .items-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .items-list li {
+            background: rgba(11, 15, 25, 0.6);
+            border: 1px solid #1f293d;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .items-list li i {
+            color: var(--sell-color);
+            font-size: 0.9rem;
+        }
+        .steps-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .steps-list li {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: rgba(11, 15, 25, 0.6);
+            border: 1px solid #1f293d;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        .step-number {
+            background: var(--accent-color);
+            color: #0b0f19;
+            font-weight: 900;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        .step-text h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            color: #fff;
+        }
+        .step-text p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .sell-cta-box {
+            text-align: center;
+            background: rgba(11, 15, 25, 0.8);
+            border: 1px solid #1f293d;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        .sell-cta-box p {
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+        .btn-sell-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--sell-color);
+            color: #000;
+            padding: 1rem 2.2rem;
+            border-radius: 8px;
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(255, 153, 0, 0.3);
+        }
+        .btn-sell-action:hover {
+            background-color: #ffaa22;
+            transform: translateY(-2px);
+        }
+
         /* Seção de Catálogo e Lojas Online */
         .catalog-section {
-            padding: 40px 5%;
+            padding: 60px 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -359,6 +530,11 @@
         footer p {
             margin-bottom: 0.5rem;
         }
+        @media(max-width: 900px) {
+            .sell-content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
         @media(max-width: 768px) {
             .hero h1 { font-size: 2.1rem; }
             nav { display: none; }
@@ -368,15 +544,16 @@
 </head>
 <body>
 
-    <!-- Cabeçalho com link de Catálogo -->
+    <!-- Cabeçalho -->
     <header>
         <a href="#" class="logo">NETOINFO</a>
         <nav>
             <a href="#services">Serviços</a>
+            <a href="#comprar-vender" class="btn-sell-nav">Comprar / Vender</a>
             <a href="#catalog">Catálogo</a>
             <a href="#reviews">Avaliações</a>
             <a href="#location">Localização</a>
-            <a href="#social">Redes Sociais</a>
+            <a href="#social">Redes</a>
         </nav>
         <a href="https://wa.me/5519992277087?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." class="btn-whatsapp" style="padding: 0.5rem 1rem; font-size: 0.9rem;" target="_blank">
             <i class="fab fa-whatsapp"></i> WhatsApp
@@ -387,13 +564,18 @@
     <section class="hero">
         <div class="badge-region"><i class="fas fa-map-marker-alt"></i> Atendimento Especializado em Campinas e Região</div>
         <h1>Máxima Performance para seu <span>PC e Notebook</span></h1>
-        <p>Soluções completas em limpeza preventiva, manutenção avançada e otimização de desempenho para trabalho, estudos e jogos. Garantia de rapidez e confiança.</p>
-        <a href="https://wa.me/5519992277087?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20computador." class="btn-whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i> Falar no WhatsApp Agora
-        </a>
+        <p>Soluções completas em limpeza preventiva, manutenção avançada, otimização e avaliação/compra de hardware usado.</p>
+        <div class="hero-buttons">
+            <a href="https://wa.me/5519992277087?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20o%20técnico." class="btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Falar com Técnico
+            </a>
+            <a href="#comprar-vender" class="btn-whatsapp" style="background-color: var(--sell-color); color: #000; box-shadow: 0 4px 20px rgba(255, 153, 0, 0.3);">
+                <i class="fas fa-handshake"></i> Vender meu Hardware Usado
+            </a>
+        </div>
     </section>
 
-    <!-- Seção de Serviços com Orçamento Direto -->
+    <!-- Seção de Serviços -->
     <section id="services" class="services">
         <h2 class="section-title">Nossos Serviços Especializados</h2>
         <div class="services-grid">
@@ -425,6 +607,68 @@
                 </div>
                 <a href="https://wa.me/5519992277087?text=Olá!%20Gostaria%20de%20otimizar%20o%20desempenho%20do%20meu%20PC/Notebook." class="btn-card-whatsapp" target="_blank">
                     <i class="fab fa-whatsapp"></i> Quero Otimizar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: Compra e Avaliação de Hardware Usado -->
+    <section id="comprar-vender" class="sell-section">
+        <div class="sell-container">
+            <div class="sell-header">
+                <span class="sell-badge"><i class="fas fa-coins"></i> Serviço Oficial de Avaliação e Compra</span>
+                <h2>COMPRA E AVALIAÇÃO DE HARDWARE USADO</h2>
+                <p>Venda seu PC ou peças com segurança, avaliação justa para revenda e pagamento imediato via Pix em Campinas.</p>
+            </div>
+
+            <div class="sell-content-grid">
+                <!-- O que compramos -->
+                <div class="sell-items-box">
+                    <h3><i class="fas fa-check-circle"></i> O que Compramos (Itens em perfeito funcionamento)</h3>
+                    <ul class="items-list">
+                        <li><i class="fas fa-angle-right"></i> <strong>PCs Completos:</strong> Modelos Gamer ou para Escritório</li>
+                        <li><i class="fas fa-angle-right"></i> <strong>Placas de Vídeo:</strong> GTX 1050 Ti ou superior / AMD equivalente</li>
+                        <li><i class="fas fa-angle-right"></i> <strong>Processadores:</strong> AMD Ryzen AM4 e Intel a partir da 6ª Geração (DDR4)</li>
+                        <li><i class="fas fa-angle-right"></i> <strong>Placas-Mãe:</strong> Plataformas AM4 e Intel DDR4</li>
+                        <li><i class="fas fa-angle-right"></i> <strong>Memórias e Armazenamento:</strong> Memórias RAM DDR4, SSDs SATA e NVMe</li>
+                        <li><i class="fas fa-angle-right"></i> <strong>Fontes de Alimentação:</strong> Apenas com selo 80 Plus (400W, 500W, 600W+)</li>
+                        <li><i class="fas fa-angle-right"></i> <strong>Periféricos e Refrigeração:</strong> Monitores a partir de 19" com HDMI e Water/Air Coolers</li>
+                    </ul>
+                </div>
+
+                <!-- Fluxo em 3 passos -->
+                <div class="sell-steps-box">
+                    <h3><i class="fas fa-list-ol"></i> Como Funciona o Atendimento</h3>
+                    <ul class="steps-list">
+                        <li>
+                            <div class="step-number">1</div>
+                            <div class="step-text">
+                                <h4>Envie no WhatsApp</h4>
+                                <p>Mande a lista detalhada das peças, modelo exato e fotos reais do equipamento.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-number">2</div>
+                            <div class="step-text">
+                                <h4>Pré-Avaliação Justa</h4>
+                                <p>Receba uma estimativa de valor justa focada em revenda de forma ágil.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-number">3</div>
+                            <div class="step-text">
+                                <h4>Teste e Pix Imediato</h4>
+                                <p>Traga o item para teste presencial na bancada e saia com o pagamento via Pix.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sell-cta-box">
+                <p><i class="fas fa-map-marker-alt" style="color: var(--sell-color);"></i> Atendimento presencial a 10 minutos do Shopping Iguatemi em Campinas - SP.</p>
+                <a href="https://wa.me/5519992277087?text=Olá!%20Gostaria%20de%20uma%20avaliação%20para%20vender%20meu%20hardware%20usado." target="_blank" rel="noopener noreferrer" class="btn-sell-action">
+                    <i class="fab fa-whatsapp"></i> Falar no WhatsApp para Avaliação
                 </a>
             </div>
         </div>
